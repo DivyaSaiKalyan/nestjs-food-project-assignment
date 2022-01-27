@@ -20,7 +20,8 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "prettier-format": "prettier --config .prettierrc \"./src/**/*.ts\" --write",
-    "prettier-watch": "onchange \"src/**/*.ts\" -- prettier --write {{changed}}"
+    "prettier-watch": "onchange \"src/**/*.ts\" -- prettier --write {{changed}}",
+    "compodoc": "npx @compodoc/compodoc -p tsconfig.json -s"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
@@ -42,6 +43,7 @@
     "typeorm": "^0.2.41"
   },
   "devDependencies": {
+    "@compodoc/compodoc": "^1.1.18",
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
     "@nestjs/testing": "^8.0.0",

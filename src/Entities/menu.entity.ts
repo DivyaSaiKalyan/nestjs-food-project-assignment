@@ -10,6 +10,9 @@ import {
 import { Restaurent } from './restaurent.entity';
 import { Cart } from './cart.entity';
 
+/**
+ * This is menu entity
+ */
 @Entity()
 export class Menu {
   @PrimaryGeneratedColumn()

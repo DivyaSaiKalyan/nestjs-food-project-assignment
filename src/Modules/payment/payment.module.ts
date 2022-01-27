@@ -8,6 +8,9 @@ import { User } from './../../Entities/user.entity';
 import { Address } from './../../Entities/address.entity';
 import { JwtServiceClass } from './../../Common/Providers/jwt.service';
 
+/**
+ * all configurations of the payment related is avaliable here
+ */
 @Module({
   imports: [TypeOrmModule.forFeature([Cart, User, Address])],
 

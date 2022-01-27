@@ -37,6 +37,22 @@ export class RestaurentService {
     }
   }
 
+  async getRestarentNames() {
+    return await this.restaurentRepository.find();
+  }
+
+  async getFoods(restaurentName: string) {
+    const getRestaurent = await this.restaurentRepository.findOne({
+      RestaurentName: restaurentName
+    });
+    if (!getRestaurent) {
+      throw new NotFoundException('Restaurent is not register');
+    }
+    return await this.menuRepository.find({
+      restaurentName: getRestaurent.RestaurentName
+    });
+  }
+
   async findRestaurest(restaurentName: string) {
     const getRestaurent = await this.restaurentRepository.findOne({
       RestaurentName: restaurentName

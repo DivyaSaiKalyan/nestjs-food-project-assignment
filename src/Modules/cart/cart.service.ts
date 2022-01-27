@@ -10,7 +10,9 @@ import { RestaurentService } from './../restaurent/restaurent.service';
 import { Menu } from './../../Entities/menu.entity';
 import { UserService } from './../user/user.service';
 import { User } from './../../Entities/user.entity';
-
+/**
+ * This is cart service method
+ */
 @Injectable()
 export class CartService {
   constructor(
@@ -18,7 +20,12 @@ export class CartService {
     private readonly restaurentService: RestaurentService,
     private readonly userService: UserService
   ) {}
-
+  /**
+   * This method is used to add food items into cart
+   * @param data
+   * @param email
+   * @returns
+   */
   async addItemsIntoCart(data: Cart, email: string): Promise<Cart> {
     const getRestaurent = await this.restaurentService.findRestaurest(
       data.restaurentName
@@ -48,6 +55,11 @@ export class CartService {
     }
   }
 
+  /**
+   * This method is used to get cart items based on useremail
+   * @param email
+   * @returns
+   */
   async getCartItems(email: string) {
     const getUser = await this.userService.findUser(email);
     const getCart = await this.cartRepository.find({

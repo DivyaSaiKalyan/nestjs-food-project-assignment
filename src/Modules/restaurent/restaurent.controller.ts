@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { Restaurent } from 'src/Entities/restaurent.entity';
 import { RestaurentService } from './restaurent.service';
@@ -17,5 +17,15 @@ export class RestaurentController {
   @Post('AddFood')
   async addFood(@Body() data: Menu) {
     return await this.restaurentService.addMenu(data);
+  }
+
+  @Get('getRestaurent')
+  async getRestarentNames() {
+    return await this.restaurentService.getRestarentNames();
+  }
+
+  @Get('getFoodBasedOnRestaurent/:restaurentName')
+  async getFoods(@Param('restaurentName') restaurentName: string) {
+    return this.restaurentService.getFoods(restaurentName);
   }
 }

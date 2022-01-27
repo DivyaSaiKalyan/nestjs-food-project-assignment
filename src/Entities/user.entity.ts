@@ -10,6 +10,7 @@ import {
 import { Maintenance } from './maintenance.entity';
 import { Address } from './address.entity';
 import { Cart } from './cart.entity';
+/**This is used to maintain password strong */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const bcrypt = require('bcryptjs');
 /**

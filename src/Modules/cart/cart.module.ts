@@ -11,6 +11,9 @@ import { User } from './../../Entities/user.entity';
 import { JwtServiceClass } from './../../Common/Providers/jwt.service';
 import { Address } from './../../Entities/address.entity';
 
+/**
+ * This is cart module cart related configurations are avaliable here
+ */
 @Module({
   imports: [TypeOrmModule.forFeature([Cart, Restaurent, Menu, User, Address])],
 

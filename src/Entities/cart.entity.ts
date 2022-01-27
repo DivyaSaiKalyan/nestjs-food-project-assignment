@@ -4,6 +4,9 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { User } from './user.entity';
 import { Menu } from './menu.entity';
 
+/**
+ * This is cart entity
+ */
 @Entity()
 export class Cart {
   @PrimaryGeneratedColumn()
